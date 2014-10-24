@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/saveOrder}" method="post">
+		<br />Source:<input type="text" name="source" /> <br /> Destination:<input
+			type="text" name="destination" /> <br /> <input type="submit"
+			value="Submit" />
+	</form>
+
+
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+		<form th:action="@{/accountCreate}">
+		<br />Create account for a user!!<br /> <input
+			type="submit" value="Create Account" />
+	</form>
+</div>
+
+
+</body>
+</html>
